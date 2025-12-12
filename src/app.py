@@ -6,7 +6,7 @@ import streamlit as st
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(page_title="Password Security & Breach Checker", page_icon="🔐")
 
-st.title("🔐 Password Security & Breach Checker")
+st.title("Password Security & Breach Checker")
 
 st.markdown("""
 Check how strong your password is and whether it has ever appeared in a known **data breach**.
@@ -16,7 +16,7 @@ This app:
 - Checks if your password appears in the **Have I Been Pwned** password database
 - Explains **why** a password is considered weak or risky
 
-> ⚠️ Your full password is **never sent** over the network.
+> ⚠Your full password is **never sent** over the network.
 > Only the first 5 characters of its **SHA-1 hash** are sent, using the HIBP k-anonymity API.
 """)
 
@@ -172,7 +172,7 @@ if analyze_clicked:
         st.write(f"**Character types used:** {strength['variety_count']} / 4")
 
         if strength["issues"]:
-            st.write("### ⚠️ Improvement Suggestions")
+            st.write("### Improvement Suggestions")
             for issue in strength["issues"]:
                 st.write(f"- {issue}")
         else:
@@ -181,7 +181,7 @@ if analyze_clicked:
         st.markdown("---")
 
         # Check breach status
-        st.subheader("🕵️ Breach Exposure Check")
+        st.subheader("Breach Exposure Check")
 
         with st.spinner("Checking Have I Been Pwned (HIBP) database..."):
             breach_count = check_pwned(password)
@@ -192,14 +192,14 @@ if analyze_clicked:
                 "Try again later, or check your internet connection."
             )
         elif breach_count == 0:
-            st.success("✅ This password **was not found** in the HIBP database.")
+            st.success("This password **was not found** in the HIBP database.")
             st.write(
                 "That doesn't guarantee it's perfectly safe, but it hasn't appeared "
                 "in known public password dumps."
             )
         else:
             st.error(
-                f"🚨 This password has appeared in **{breach_count:,}** known data breaches!"
+                f"This password has appeared in **{breach_count:,}** known data breaches!"
             )
             st.write("""
             You should **never** use this password again.
@@ -208,7 +208,7 @@ if analyze_clicked:
 
         # Explanation section
         st.markdown("---")
-        st.subheader("ℹ️ What this tool teaches")
+        st.subheader("ℹWhat this tool teaches")
 
         st.markdown("""
         - **K-anonymity:** Only the first 5 characters of the SHA-1 hash are sent to HIBP.
