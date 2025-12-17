@@ -1,5 +1,12 @@
 📁 Project 2: Password Security Checker
+
+
+
+
 🔐 Overview
+
+
+
 The Password Security Checker evaluates user passwords against known breach data to help prevent credential reuse and account compromise. The project demonstrates an understanding of identity security, one of the most critical areas in modern security and governance.
 
 🎯 Objectives
